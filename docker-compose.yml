@@ -10,6 +10,25 @@ services:
       - .:/code
     depends_on:
       - micromamba
+      - huggingface
+      - keras
+      - numpy
+      - llama-index
 
   micromamba:
     image: mambaorg/micromamba:jammy-cuda-12.1.1
+
+  huggingface:
+    image: huggingface/transformers-pytorch-gpu:4.35.2
+
+  keras:
+    image: gw000/keras:2.1.4-py3
+
+  numpy:
+    image: adreeve/python-numpy:latest
+
+  langchain:
+    image: langchain/langchain:latest
+
+  llama-index:
+    image: xychelsea/llama_index:latest-gpu-jupyter
